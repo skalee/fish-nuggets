@@ -91,6 +91,10 @@ complete -c git -n 'contains \'clone\' (commandline -poc)' -l depth --descriptio
 #
 
 complete -c git -n 'contains \'commit\' (commandline -poc)' -l author --description '<author>'
+complete -c git -n 'contains \'commit\' (commandline -poc)' -s a -l all --description 'Include all changes to working directory'
+complete -c git -n 'contains \'commit\' (commandline -poc)' -s v -l verbose --description 'View changes in the commit message'
+complete -c git -n 'contains \'commit\' (commandline -poc)' -l amend --description 'Ammend last commit with staged changes'
+complete -c git -n 'contains \'commit\' (commandline -poc)' -s m -l message --description '<commit message>'
 
 
 #
