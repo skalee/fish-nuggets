@@ -76,6 +76,7 @@ complete -c git -n 'contains \'checkout\' (commandline -poc)' -l no-track -x --d
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -l hard -x --description 'To further move around, for example. You'
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -s q -x --description 'Suppress feedback messages'
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -s b -x --description '<branch name>'
+complete -c git -n 'contains \'checkout\' (commandline -poc)' -s f -x --description 'Throw away local changes'
 
 
 #
