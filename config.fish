@@ -31,4 +31,7 @@ end
 set -x JAVA_HOME "/usr/"
 
 
-
+# pull in a local, ignored-by-git config file
+if test -f ~/.config/fish/config.local.fish
+  . ~/.config/fish/config.local.fish
+end
