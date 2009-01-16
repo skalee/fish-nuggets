@@ -26,6 +26,7 @@ complete -c git -n '__fish_use_subcommand' -x -a commit --description 'Record ch
 complete -c git -n '__fish_use_subcommand' -x -a diff --description 'Show changes between commits, commit and working tree, etc'
 complete -c git -n '__fish_use_subcommand' -x -a fetch --description 'Download objects and refs from another repository'
 complete -c git -n '__fish_use_subcommand' -x -a grep --description 'Print lines matching a pattern'
+complete -c git -n '__fish_use_subcommand' -x -a help --description 'Display help information about git'
 complete -c git -n '__fish_use_subcommand' -x -a init --description 'Create an empty git repository or reinitialize an existing one'
 complete -c git -n '__fish_use_subcommand' -x -a log --description 'Show commit logs'
 complete -c git -n '__fish_use_subcommand' -x -a merge --description 'Join two or more development histories together'
