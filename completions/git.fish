@@ -74,6 +74,8 @@ complete -c git -n 'contains \'checkout\' (commandline -poc)' -a '(__git_branch_
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -l track -x --description '--no-track options, which will be passed to git branch'
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -l no-track -x --description 'Given'
 complete -c git -n 'contains \'checkout\' (commandline -poc)' -l hard -x --description 'To further move around, for example. You'
+complete -c git -n 'contains \'checkout\' (commandline -poc)' -s q -x --description 'Suppress feedback messages'
+complete -c git -n 'contains \'checkout\' (commandline -poc)' -s b -x --description '<branch name>'
 
 
 #
