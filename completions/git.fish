@@ -1,5 +1,5 @@
 function __git_branch_list  
-  git branch | sed -e "s/[^a-zZ-Z_-]*//g"
+  git branch | sed -e "s/[^a-zZ-Z0-9_-]*//g"
 end
 
 #
@@ -22,6 +22,7 @@ complete -c git -n '__fish_use_subcommand' -x -a bisect --description 'Find the 
 complete -c git -n '__fish_use_subcommand' -x -a branch --description 'List, create, or delete branches'
 complete -c git -n '__fish_use_subcommand' -x -a checkout --description 'Checkout and switch to a branch'
 complete -c git -n '__fish_use_subcommand' -x -a clone --description 'Clone a repository into a new directory'
+complete -c git -n '__fish_use_subcommand' -x -a close --description 'Deletes a branch by name (or the current branch)'
 complete -c git -n '__fish_use_subcommand' -x -a commit --description 'Record changes to the repository'
 complete -c git -n '__fish_use_subcommand' -x -a diff --description 'Show changes between commits, commit and working tree, etc'
 complete -c git -n '__fish_use_subcommand' -x -a fetch --description 'Download objects and refs from another repository'
@@ -31,6 +32,7 @@ complete -c git -n '__fish_use_subcommand' -x -a init --description 'Create an e
 complete -c git -n '__fish_use_subcommand' -x -a log --description 'Show commit logs'
 complete -c git -n '__fish_use_subcommand' -x -a merge --description 'Join two or more development histories together'
 complete -c git -n '__fish_use_subcommand' -x -a mv --description 'Move or rename a file, a directory, or a symlink'
+complete -c git -n '__fish_use_subcommand' -x -a open --description 'Create or switch to the named branch'
 complete -c git -n '__fish_use_subcommand' -x -a pull --description 'Fetch from and merge with another repository or a local branch'
 complete -c git -n '__fish_use_subcommand' -x -a push --description 'Update remote refs along with associated objects'
 complete -c git -n '__fish_use_subcommand' -x -a rebase --description 'Forward-port local commits to the updated upstream head'
@@ -249,3 +251,9 @@ complete -c git -n 'contains \'rm\' (commandline -poc)' -l cached -x --descripti
 
 
 
+#
+# Completions for my custom git scripts
+#
+complete -x -c git -n 'contains \'open\' (commandline -poc)' -a '(__git_branch_list)' --description "Git branch"
+complete -x -c git -n 'contains \'close\' (commandline -poc)' -a '(__git_branch_list)' --description "Git branch"
+complete -x -c git -n 'contains \'close\' (commandline -poc)' -s D -l force -x --description "Discard any commits not in the tracking branch"
