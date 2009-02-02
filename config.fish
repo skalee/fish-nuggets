@@ -7,18 +7,14 @@ if status --is-login
 end
 
 # Textmate defaults to /usr/bin/mate, but let's check for /usr/local/bin/mate
-if test -f "/usr/local/bin/mate"
-	set -x EDITOR "/usr/local/bin/mate -w"
-else
-	set -x EDITOR "/usr/bin/mate -w"
-end
+set -x EDITOR "mate -w"
 
 set fish_greeting ""
 set -x CLICOLOR 1
 
 set BROWSER open
 
-bind \cr "rake"
+cd ~
 
 set -x JAVA_HOME "/usr/"
 
