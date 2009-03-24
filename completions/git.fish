@@ -1,5 +1,5 @@
 function __git_branch_list  
-  git branch | sed -e "s/[^\.a-zZ-Z0-9_-]*//g"
+  git for-each-ref | grep refs/heads | sed -e 's/^.*refs\/heads\///g'
 end
 
 #
