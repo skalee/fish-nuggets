@@ -5,6 +5,12 @@ function parse_git_branch
     else
       set_color blue
     end
-    git branch --no-color ^/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \/\1/'
+    echo -n ' /'
+    set -l branch (git symbolic-ref -q HEAD)
+    if test ! -z "$branch"
+      echo -n $branch | sed -e 's/refs\/heads\///'
+    else
+      git name-rev --name-only HEAD ^/dev/null
+    end
   end
 end
