@@ -1,3 +1,5 @@
 function is-hg
-  hg status ^/dev/null >/dev/null
+  if which -s hg
+    hg status ^/dev/null >/dev/null
+  end
 end
