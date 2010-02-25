@@ -5,7 +5,7 @@ for p in /usr/bin /usr/local/bin /usr/local/mysql/bin ~/.gem/bin ~/.gem/ruby/1.8
 end
 
 # Textmate defaults to /usr/bin/mate, but let's check for /usr/local/bin/mate
-set -x EDITOR "mate -w"
+set -x EDITOR "vim"
 
 set fish_greeting ""
 set -x CLICOLOR 1
