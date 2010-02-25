@@ -1,5 +1,5 @@
 function __bash_env_to_fish
-  set -l env_vars_to_skip _ SHLVL
+  set -l env_vars_to_skip _ SHLVL PWD
 
   for v in $argv
     set -l tmp (echo $v|sed -e 'y/=/\n/')
