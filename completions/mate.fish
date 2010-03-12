@@ -11,4 +11,4 @@ complete -c mate -s v -l version            -A -d "Print version information."
 
 ## custom completion of project files
 
-complete -c mate -d 'Project' -A -a '(find ~/.tmproj -name "*.tmproj" -d 1 | xargs -n 1 basename -s ".tmproj")'
+complete -c mate -d 'Project' -A -a '(test -d ~/.tmproj; and find ~/.tmproj -name "*.tmproj" -d 1 | xargs -n 1 basename -s ".tmproj")'
