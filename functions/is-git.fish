@@ -1,3 +1,3 @@
 function is-git
-  git branch --no-color ^/dev/null >/dev/null
+  git rev-parse --git-dir ^/dev/null >/dev/null
 end

@@ -9,7 +9,7 @@ function parse_git_branch
     return
   end
 
-  if test ! (git status | grep 'working directory clean')
+  if has-git-changes
     set_color red
   else
     set_color blue
