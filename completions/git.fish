@@ -1,4 +1,4 @@
-function __git_branch_list  
+function __git_branch_list
   git for-each-ref | grep refs/heads | sed -e 's/^.*refs\/heads\///g'
 end
 
@@ -42,6 +42,7 @@ complete -c git -n '__fish_use_subcommand' -x -a show --description 'Show variou
 complete -c git -n '__fish_use_subcommand' -x -a status --description 'Show the working tree status'
 complete -c git -n '__fish_use_subcommand' -x -a tag --description 'Create, list, delete or verify a tag object signed with GPG'
 complete -c git -n '__fish_use_subcommand' -x -a cherry-pick --description 'Cherry-pick from another branch'
+complete -c git -n '__fish_use_subcommand' -x -a gc --description 'Cleanup unnecessary files and optimize the local repository'
 
 
 
@@ -248,6 +249,14 @@ complete -c git -n 'contains \'rm\' (commandline -poc)' -l cached -x --descripti
 # Completions for the 'tag' subcommand
 #
 
+
+#
+# Completions for the 'gc' subcommand
+#
+
+complete -c git -n 'contains \'gc\' (commandline -poc)' -l aggressive -x --description 'Aggressively optimize the repository at the expense of taking much more time'
+complete -c git -n 'contains \'gc\' (commandline -poc)' -l auto -x --description 'Checks whether any housekeeping is required; if not, it exits without performing any work'
+complete -c git -n 'contains \'gc\' (commandline -poc)' -l quiet -x --description 'Suppress all progress reports'
 
 
 
