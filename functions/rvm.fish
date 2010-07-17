@@ -1,22 +1,11 @@
-function rvm
-  # save original environment
-  set -l fish_env (env)
-
-  # run rvm and capture the resulting environment
+function rvm -d 'Ruby enVironment Manager'
+  # run RVM and capture the resulting environment
   set -l env_file (mktemp -t rvm.fish.XXXXXXXXXX)
-  bash -c 'source ~/.rvm/scripts/rvm; rvm "$@"; env > "$0"' $env_file $argv
-  set -l bash_env (cat $env_file)
+  bash -c 'source ~/.rvm/scripts/rvm; rvm "$@"; status=$?; env > "$0"; exit $status' $env_file $argv
+
+  # apply rvm_* and *PATH variables from the captured environment
+  and eval (grep '^rvm\|^[^=]*PATH' $env_file | sed 's/^/set -xg /; s/=/ /; /^[^=]*PATH/y/:/ /; s/$/ ;/')
+
+  # clean up
   rm -f $env_file
-
-  # get the env values from rvm that were present in fish
-  set -l common
-
-  for env in $bash_env
-    if not contains $env $fish_env
-      set common $common $env
-    end
-  end
-
-  # write the env values to the current fish session
-  __bash_env_to_fish $common
 end
