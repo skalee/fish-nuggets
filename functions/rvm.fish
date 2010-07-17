@@ -3,8 +3,8 @@ function rvm
   set -l fish_env (env)
 
   # run rvm and capture the resulting environment
-  set -l env_file (mktemp -t rvm)
-  bash -e -c "source ~/.rvm/scripts/rvm; rvm $argv; env > $env_file"
+  set -l env_file (mktemp -t rvm.fish.XXXXXXXXXX)
+  bash -c 'source ~/.rvm/scripts/rvm; rvm "$@"; env > "$0"' $env_file $argv
   set -l bash_env (cat $env_file)
   rm -f $env_file
 
