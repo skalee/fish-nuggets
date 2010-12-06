@@ -15,7 +15,7 @@ function parse_git_branch
     set_color blue
   end
   echo -n ' /'
-  set -l branch (git symbolic-ref -q HEAD)
+  set -l branch (env git symbolic-ref -q HEAD)
   if test ! -z "$branch"
     echo -n $branch | sed -e 's/refs\/heads\///'
   else
