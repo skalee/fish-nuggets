@@ -1,3 +1,3 @@
 function gu
-	git update $argv; 
+	gx-update $argv; 
 end

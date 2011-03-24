@@ -1,3 +1,3 @@
 function gp
-	git-publish $argv; 
+	gx-publish $argv;
 end
