@@ -1,9 +1,4 @@
 function parse_hg_branch
-  # make sure mercurial is installed
-  if not which -s hg
-    return
-  end
-
   # make sure the directory is a mercurial repo
   if not is-hg
     return

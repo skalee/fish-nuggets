@@ -1,9 +1,4 @@
 function parse_git_branch
-  # make sure git is installed
-  if not which -s git
-    return
-  end
-
   # make sure the directory is a git repo
   if not is-git
     return
