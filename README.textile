@@ -1,8 +1,9 @@
 h1. Changes against lunks/fish-nuggets
 
-* master branch contains upstream from lunks/fish-nuggets master and is intended to be identical with it.
-* addons includes my non-controversial changes (which are adding new commands, not changing behaviour of existing ones).
-* patched includes more aggressive changes and is used by me personally.
+* master branch contains upstream from lunks/fish-nuggets master and is intended to be identical with it
+* addons includes my non-controversial changes against master; it adds commands, but does not change behaviour of existing ones
+* patched is based on addons, but additionally includes more aggressive changes and fixes which make it usable on OS X
+* skalee equals to patched + my configs (like prompt) and is used by me personally
 
 h1. Fish nuggets
 
