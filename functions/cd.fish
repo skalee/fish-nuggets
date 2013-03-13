@@ -2,7 +2,7 @@ function cd --description "Change working directory"
   # Source a .rvmrc file in a directory after changing to it, if it exists.
   # To disable this fature, set rvm_project_rvmrc=0 in $HOME/.rvmrc
 
-  builtin cd "$argv"
+  builtin cd $argv
   if test "$rvm_project_rvmrc" != 0
     set -l cwd $PWD
     while true
@@ -12,8 +12,8 @@ function cd --description "Change working directory"
         end
         break
       else
-        if test -f "$cwd/.rvmrc"
-          . "$cwd/.rvmrc"
+        if test -s ".rvmrc"
+          eval "rvm reload" > /dev/null
           break
         else
           set cwd (dirname "$cwd")
