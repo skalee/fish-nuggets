@@ -16,6 +16,12 @@ cd ~
 set -x JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home"
 
 
+# pull in a skalee's config file
+if test -f ~/.config/fish/config.skalee.fish
+  . ~/.config/fish/config.skalee.fish
+end
+
+
 # pull in a local, ignored-by-git config file
 if test -f ~/.config/fish/config.local.fish
   . ~/.config/fish/config.local.fish
