@@ -1,5 +1,3 @@
-set RBENV_ROOT /usr/local/var/rbenv
-
 for p in $HOME/.rbenv/shims $RBENV_ROOT/bin   /usr/local/share/python3
 	if test -d $p
 		set -x PATH $p $PATH
