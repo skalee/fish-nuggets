@@ -1,4 +1,4 @@
-**NOTE: This repository is long unmaintained and now retired.**
+**NOTE: This repository is long unmaintained and now retired.**  See other forks if you want fish-nuggets.
 
 h1. Changes against lunks/fish-nuggets
 
