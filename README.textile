@@ -1,3 +1,5 @@
+**NOTE: This repository is long unmaintained and now retired.**
+
 h1. Changes against lunks/fish-nuggets
 
 * master branch contains upstream from lunks/fish-nuggets master and is intended to be identical with it
